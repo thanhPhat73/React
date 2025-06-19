@@ -1,14 +1,28 @@
+import { useState } from "react";
+
 const TodoNew = (props) => {
     // vì props là object nên có thể . để call nó
     // có thể destrucing
-    console.log("props", props)
+
+    const [valueInput, setValueInput] = useState()
+
+
+
     const { addData } = props;
-    addData()
-    //props.addData()
+
+    const handlClick = () => {
+        addData(valueInput)
+        setValueInput("")
+    }
+
+    const handlOnChangs = (name) => {
+        setValueInput(name)
+    }
     return (
         <div className="todo-new">
-            <input type="text" placeholder="Enter your task" />
-            <button>Add</button>
+            <input value={valueInput}
+                type="text" placeholder="Enter your task" onChange={(event) => { handlOnChangs(event.target.value) }} />
+            <button onClick={handlClick}>Add</button>
         </div>
     )
 }

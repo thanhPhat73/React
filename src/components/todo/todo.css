@@ -55,9 +55,23 @@
 }
 
 .todo-data {
+
     padding: 130px;
     border: 1px solid #ccc;
     border-radius: 6px;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    margin: 8px auto;
+    max-width: 300px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
 }
 
 .logo {
