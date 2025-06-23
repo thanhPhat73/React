@@ -7,14 +7,30 @@ import {
 } from "react-router-dom";
 import LoginPage from './pages/login.jsx';
 import RegisterPage from './pages/register.jsx';
-import ProductsPage from './pages/products.jsx';
+import BookPages from './pages/book.jsx';
 import UserPage from './pages/user.jsx';
 import './style/global.css'
+import ToDoApp from './components/todo/todoApp.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children: [
+      {
+        index: true,
+        element: <ToDoApp />,
+      },
+      {
+        path: "/product",
+        element: <BookPages />,
+      },
+      {
+        path: "/user",
+        element: <UserPage />,
+      },
+
+    ]
   },
   {
     path: "/login",
@@ -24,14 +40,7 @@ const router = createBrowserRouter([
     path: "/register",
     element: <RegisterPage />,
   },
-  {
-    path: "/product",
-    element: <ProductsPage />,
-  },
-  {
-    path: "/user",
-    element: <UserPage />,
-  },
+
 ]);
 
 
